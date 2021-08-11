@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:inputs_widjet_app/main.dart';
+import 'package:inputs_widjet_app/textFields.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
