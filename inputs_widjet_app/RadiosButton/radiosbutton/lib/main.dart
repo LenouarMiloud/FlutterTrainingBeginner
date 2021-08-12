@@ -25,7 +25,10 @@ class _State extends State<MyApp>{
     List<Widget> list = <Widget>[];
 
     for(int i=0;i<3;i++){
-      list.add(new Radio(value: i, groupValue: _value1, onChanged: _setValue1));
+      list.add(new Radio(
+          value: i,
+          groupValue: _value1,
+          onChanged: _setValue1));
     }
 
     Column column = new Column(children: list,);
