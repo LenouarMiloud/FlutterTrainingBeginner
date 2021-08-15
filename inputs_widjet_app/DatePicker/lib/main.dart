@@ -17,12 +17,13 @@ class _State extends State<MyApp>{
   String _value = '';
 
   Future _getDate() async {
-    DateTime? picker = await showDatePicker(
+    DateTime? picked = await showDatePicker(
         context: context,
         initialDate: new DateTime.now(),
         firstDate: new DateTime(2016),
-        lastDate: new DateTime(2099));
-    if(picker != null) setState(() => _value = picker.toString());
+        lastDate: new DateTime(2099)
+    );
+    if(picked != null) setState(() => _value = picked.toString());
   }
 
   @override
@@ -37,7 +38,7 @@ class _State extends State<MyApp>{
           child: new Column(
             children: <Widget>[
               new Text(_value),
-              new E(onPressed: _getDate(), child: new Text('Click me'),)
+              new ElevatedButton(onPressed: _getDate, child: new Text('Click me'),)
             ],
           ),
         ),
