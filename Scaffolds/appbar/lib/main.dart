@@ -15,7 +15,9 @@ class _State extends State<MyApp>{
 
   int _value = 0;
   String floatinValue = '';
+  String _persistenceValue = '';
 
+  void _onClick(String value) => setState(() => _persistenceValue = value);
   void _add()=> setState(()=> _value ++);
   void _remove()=> setState(()=> _value--);
   void _onClickd()=> setState(()=> floatinValue = new DateTime.now().toString());
@@ -31,6 +33,11 @@ class _State extends State<MyApp>{
           new IconButton(onPressed: _remove, icon: new Icon(Icons.remove))
         ],
       ),
+      persistentFooterButtons: <Widget>[
+        new IconButton(icon: new Icon(Icons.timer), onPressed: () => _onClick('Button 1')),
+        new IconButton(icon: new Icon(Icons.people), onPressed: () => _onClick('Button 2')),
+        new IconButton(icon: new Icon(Icons.map), onPressed: () => _onClick('Button 3')),
+      ],
       floatingActionButton: new FloatingActionButton(
         onPressed: _onClickd,
         backgroundColor: Colors.green,
