@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main(){
@@ -43,6 +45,17 @@ class _State extends State<MyApp>{
           new IconButton(onPressed: _add, icon: new Icon(Icons.add)),
           new IconButton(onPressed: _remove, icon: new Icon(Icons.remove))
         ],
+      ),
+      drawer: new Drawer(
+        child: new Container(
+          padding: new EdgeInsets.all(32.2),
+          child: new Column(
+            children: <Widget>[
+              new Text('This is Drawer'),
+              new ElevatedButton(onPressed: ()=> Navigator.pop(context), child: new Text("Close"))
+            ],
+          ),
+        ),
       ),
       persistentFooterButtons: <Widget>[
         new IconButton(icon: new Icon(Icons.timer), onPressed: () => _onClick('Button 1')),
