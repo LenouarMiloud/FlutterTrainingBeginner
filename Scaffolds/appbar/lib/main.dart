@@ -16,11 +16,22 @@ class _State extends State<MyApp>{
   int _value = 0;
   String floatinValue = '';
   String _persistenceValue = '';
+  late List<BottomNavigationBarItem> _items;
+  String _valueBNavigation = '';
+  int _index = 0;
 
   void _onClick(String value) => setState(() => _persistenceValue = value);
   void _add()=> setState(()=> _value ++);
   void _remove()=> setState(()=> _value--);
   void _onClickd()=> setState(()=> floatinValue = new DateTime.now().toString());
+
+  @override
+  void initState() {
+    _items = [];
+    _items.add(new BottomNavigationBarItem(icon: new Icon(Icons.people), title: new Text('People')));
+    _items.add(new BottomNavigationBarItem(icon: new Icon(Icons.weekend), title: new Text('Weekend')));
+    _items.add(new BottomNavigationBarItem(icon: new Icon(Icons.message), title: new Text('Message')));
+  }
 
   @override
   Widget build(BuildContext context){
@@ -50,10 +61,23 @@ class _State extends State<MyApp>{
           child: new Column(
             children: <Widget>[
               new Text("${_value}\n".toString(),style: new TextStyle(fontWeight: FontWeight.bold,fontSize: 35.0)),
-              new Text(floatinValue)
+              new Text("${floatinValue} \n"),
+              new Text(_valueBNavigation)
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: new BottomNavigationBar(
+        items: _items,
+        fixedColor: Colors.lightGreen,
+        currentIndex: _index,
+        onTap: (int item) {
+          setState((){
+            _index = item;
+            _valueBNavigation = "Current value is: ${_index.toString()}";
+          });
+        },
+
       ),
     );
   }
