@@ -13,10 +13,10 @@ class MyApp extends StatefulWidget{
 
 class _State extends State<MyApp>{
 
-  final GlobalKey<ScaffoldState> _scafoldState = new GlobalKey<ScaffoldState>();
+  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
   void _showBar(){
-    _scafoldState.currentState!.showSnackBar(new SnackBar(content: new Text('Hello world')));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
   @override
