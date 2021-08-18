@@ -15,3 +15,6 @@ this repo will contain my beginner training exercices
 
 ### 5. [Notiffications](https://github.com/LenouarMiloud/FlutterTrainingBeginner/tree/main/Notifications)
   this folder contain a different style of Notifications
+  
+### 6. [Layouts](https://github.com/LenouarMiloud/FlutterTrainingBeginner/tree/main/Layouts)
+  this folder contain all kind of layouts 
